@@ -1,0 +1,30 @@
+.rightDiv{
+    margin: 10px;
+   
+}
+.centeredDiv{
+    text-align: center;
+}
+.helloText{
+    font-family: "Lora","Sarif";
+    font-weight: bold;
+    font-size: xx-large;
+    margin-top: 20px;
+}
+.chefImage{
+    width: 200px;
+    height: 200px;
+}
+.category{
+    margin-left: 50px;
+    font-weight: bold;
+}
+.buttonContainer{
+    margin-top: 10px;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: row;
+}
+.uploadButton{
+    margin-left: 150px;
+}

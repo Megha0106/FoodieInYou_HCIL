@@ -1,0 +1,25 @@
+
+.landing-container{
+    display: flex; 
+    flex-direction:column; 
+    align-content:center;
+    justify-content:center;
+}
+
+.sign-in{
+    background-color:rgb(245, 60, 60);
+    color:white;
+    border-radius:0;
+    font-weight:900;
+    padding:10px;
+    text-decoration:none;
+}
+
+.sign-up{
+    color:rgb(245, 60, 60);
+    border-radius:0;
+    border:2px solid rgb(245, 60, 60);
+    font-weight:900; 
+    padding:10px;
+    text-decoration:none;
+}

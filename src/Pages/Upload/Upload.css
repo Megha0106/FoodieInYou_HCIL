@@ -1,0 +1,28 @@
+
+.imgbox {
+    display: grid;
+  }
+  .imageStyle{
+    width: 100%;
+    height: 300px;
+    
+  }
+  .splitScreen {
+      /*  height: 100vh; */
+       display: grid;
+       grid-template-columns: 60% 40%;
+       grid-template-rows: 1fr; 
+       /* justify-content: center; */
+       margin-left: 200;
+       margin-top: 100;
+     }
+  .uploadText{
+   
+    font-family: "Lora","Sarif";
+    color: black;
+    justify-self: center;
+    font-size: xx-large;
+    text-underline-position: below;
+  }
+  
+    

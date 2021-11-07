@@ -1,0 +1,9 @@
+.splitScreen {
+    /*  height: 100vh; */
+     display: grid;
+     grid-template-columns: 60% 40%;
+     grid-template-rows: 1fr; 
+     /* justify-content: center; */
+     margin-left: 200;
+     margin-top: 100;
+   }

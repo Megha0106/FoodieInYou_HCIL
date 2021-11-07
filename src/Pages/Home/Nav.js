@@ -1,5 +1,5 @@
 import React from 'react'
-import './Navbar.css'
+import '../../Components/Navbar/Navbar.css'
 
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -11,11 +11,13 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
+import Badge from '@mui/material/Badge';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import UploadIcon from '@mui/icons-material/Upload';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
-import { Switch, Route, BrowserRouter, NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-
-import { Button } from '@mui/material';
 
 
 
@@ -137,17 +139,85 @@ function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1, backgroundColor:"white" }}>
-    
       <AppBar position="static">
         <div className="container">  
-          <div className="heading">
-            <Link to="/" className="heading-text">
+        <div className="heading">
+            <Link to="/home" className="heading-text">
               Foodie In You
             </Link>  
           </div>
+          <div>
+          <Toolbar>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ 'aria-label': 'search' }}
+              />
+            </Search>
+            <Box sx={{flexGrow:1, display:"flex"}} />
+            <Box sx={{display:{xs:'none', sm:'flex', md:'flex',}, flexDirection:"row", flexGrow:2 }} >
+              <h3>Cuisine</h3>
+              <h3>Drinks</h3>
+              <h3>Patron</h3>
+              <h3>AboutUs</h3>
+              <h3>Help</h3>
+            </Box>
+
+            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <IconButton
+              size="large"
+              aria-label="show 17 new notifications"
+              color="inherit"
+            >
+              <Badge>
+                <Link to='/upload-recipe' style={{color:'rgb(245, 60, 60)'}}>
+                  <UploadIcon />
+                </Link>
+              </Badge>
+            </IconButton>
+
+            <IconButton
+              size="large"
+              aria-label="show 17 new notifications"
+              color="inherit"
+            >
+              <Badge badgeContent={17} color="error">
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+            >
+              <AccountCircle />
+            </IconButton>
+          </Box>
+            
+            <Box sx={{ display: { xs: 'flex', md: 'none' } }}> {/*Mobile View*/}
+              <IconButton
+                size="large"
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+                color="inherit"
+              >
+              </IconButton>
+            </Box>
+          </Toolbar>
+          </div>
         </div>
       </AppBar>
-
+      {renderMobileMenu}
+      {renderMenu}
     </Box>
   );
 }

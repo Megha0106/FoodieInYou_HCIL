@@ -1,5 +1,5 @@
 import React from 'react'
-import './Navbar.css'
+import '../../Components/Navbar/Navbar.css'
 
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -12,10 +12,9 @@ import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
 
-import { Switch, Route, BrowserRouter, NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
-import { Button } from '@mui/material';
 
 
 
@@ -137,17 +136,55 @@ function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1, backgroundColor:"white" }}>
-    
-      <AppBar position="static">
+      <AppBar position="relative">
         <div className="container">  
-          <div className="heading">
+        <div className="heading">
             <Link to="/" className="heading-text">
               Foodie In You
             </Link>  
           </div>
+          <div>
+          <Toolbar>
+            <Search>
+              <SearchIconWrapper sx = {{backgroundColor:"white"}} >
+                <SearchIcon sx = {{backgroundColor:"white"}} />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ 'aria-label': 'search' }}
+              />
+            </Search>
+            <Box sx={{flexGrow:1, display:"flex"}} />
+            <Box sx={{display:{xs:'none', sm:'flex', md:'flex',}, flexDirection:"row", flexGrow:2 }} >
+              <h3>Cuisine</h3>
+              <h3>Drinks</h3>
+              <h3>Patron</h3>
+              <h3>AboutUs</h3>
+              <h3>Help</h3>
+            </Box>
+
+            <Box sx={{ display: { xs: 'none', md: 'flex' }}}> {/*Mobile Icon*/}
+              <Link className="sign-up" to='/sign-up' >Sign Up</Link>
+              <Link className="sign-in" to='/sign-in' >Sign In</Link>
+            </Box>
+            
+            <Box sx={{ display: { xs: 'flex', md: 'none' } }}> {/*Mobile View*/}
+              <IconButton
+                size="large"
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+                color="inherit"
+              >
+              </IconButton>
+            </Box>
+          </Toolbar>
+          </div>
         </div>
       </AppBar>
-
+      {renderMobileMenu}
+      {renderMenu}
     </Box>
   );
 }

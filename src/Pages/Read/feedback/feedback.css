@@ -1,0 +1,37 @@
+.feedbackContainer{
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 80px;
+    border-style: solid;
+    text-align: center;
+    position: sticky;
+    top: 0;
+   
+}
+.text{
+    font-family: 'Lora', serif;
+    align-self: center;
+    justify-self: center;
+    color: red;
+    font-weight: bold;
+}
+.input{
+    margin-top: 10px;
+    padding: 10px;
+}
+.ratingsDiv{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin-top:2px ;
+}
+.ratingText{
+    font-family:'cursive'
+}
+.ratings{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.submit{
+    margin-left: 25%;
+}

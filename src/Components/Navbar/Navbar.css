@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(253, 241, 241);
+    color: red;
+    top: 0;
+    position: sticky;
+}
+
+.heading{
+    
+    background: linear-gradient(0deg, rgba(195,174,34,1) 0%, rgba(253,45,45,1) 100%);
+    color: white;
+    padding: 5px;
+    top: 0;
+    position: sticky;
+}
+
+.heading-text{
+    font-weight: 900;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 24px;
+    color: white;
+    list-style: none;
+    text-decoration: none;   
+    font-size: 60px;
+}
+
+
+
+.container h3{
+    margin-inline: 50px;
+}
