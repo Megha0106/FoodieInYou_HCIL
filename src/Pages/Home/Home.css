@@ -4,3 +4,11 @@
     align-content:center;
     justify-content:center;
 }
+.pageName{
+    justify-self: center;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: crimson;
+    font-family: 'Lora','Sarif';
+    font-size: 40px;
+}

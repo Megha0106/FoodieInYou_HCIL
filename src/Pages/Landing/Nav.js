@@ -12,6 +12,7 @@ import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
 
+
 import { Link } from 'react-router-dom';
 
 
@@ -68,6 +69,9 @@ function Navbar() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+ 
+  
+
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -84,6 +88,13 @@ function Navbar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const cuisineList = [
+    {text: "African"},
+    {text: "America"},
+    {text: "Asian"},
+    {text :" Europian"}
+  ]
 
   const menuId = 'secondary-search-account-menu';
   const renderMenu = (
@@ -152,15 +163,30 @@ function Navbar() {
               <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
+                backgroundColor = "white"
               />
             </Search>
             <Box sx={{flexGrow:1, display:"flex"}} />
             <Box sx={{display:{xs:'none', sm:'flex', md:'flex',}, flexDirection:"row", flexGrow:2 }} >
-              <h3>Cuisine</h3>
-              <h3>Drinks</h3>
-              <h3>Patron</h3>
-              <h3>AboutUs</h3>
-              <h3>Help</h3>
+            <Link to="/" className="menu">
+            All Recipes
+            </Link> 
+            <Link to="/" className="menu">
+              Drinks
+            </Link> 
+            <Link to="/" className="menu">
+            Desserts
+            </Link> 
+            <Link to="/" className="menu">
+            Cuisine
+            </Link> 
+            <Link to="/" className="menu">
+            Patron
+            </Link> 
+             <Link to="/sign-up" className="menu">
+              Breakfast
+            </Link>  
+              
             </Box>
 
             <Box sx={{ display: { xs: 'none', md: 'flex' }}}> {/*Mobile Icon*/}

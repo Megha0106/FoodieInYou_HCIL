@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import {TextField,MenuItem,Button} from '@mui/material'
+import Modal from 'react-modal'
+import { IconButton } from '@material-ui/core';
+import { HelpOutline,Close } from '@mui/icons-material';
+
 import './uploadPhotos.css'
+import './UploadACK/UploadAckModal'
+import UploadAckModal from "./UploadACK/UploadAckModal";
+import UploadConfirm from "./uploadConfirm/UploadConfirm";
 export default function UploadPhotos()
 {
     const[category,setCategory] = useState() 
@@ -18,6 +25,30 @@ export default function UploadPhotos()
         setCategory(event.target.value);
       };
 
+      const [modalIsOpen, setModalIsOpen] = useState(false);
+
+        const setModalIsOpenToTrue =()=>{
+            setModalIsOpen(true)
+        }
+
+    const setModalIsOpenToFalse =()=>{
+     setModalIsOpen(false)
+    }
+
+    const customStyles = {
+        content : {
+          top                   : '50%',
+          left                  : '50%',
+          right                 : 'auto',
+          bottom                : 'auto',
+          marginRight            : '2px',
+          transform             : 'translate(-50%, -50%)', 
+          
+          border                : "2px solid #ff0000",
+          //backgroundColor: "#d2d5f7"
+               
+        }
+      };
     return(
         <div className = "rightDiv">
             <div className = "centeredDiv">
@@ -47,10 +78,17 @@ export default function UploadPhotos()
             <div className="buttonContainer">
                 <Button variant="outlined" style = {{fontFamily:'revert',fontWeight:'bold',borderColor:"rgb(242,47,13)",color:"rgb(242,47,13)"}}>Upload Photos</Button>
                 <div className = "uploadButton">
-                <Button variant="contained" style = {{fontFamily:'revert',fontWeight:'bold',backgroundColor:"rgb(242,47,13)"}}>Upload Recipe</Button>
+                <Button variant="contained" onClick = {setModalIsOpenToTrue} style = {{fontFamily:'revert',fontWeight:'bold',backgroundColor:"rgb(242,47,13)"}}>Upload Recipe</Button>
                 </div>
                
             </div>
+
+            <Modal isOpen={modalIsOpen} style = {customStyles}>
+            <IconButton color="secondary" onClick = {setModalIsOpenToFalse}>
+                <Close />
+            </IconButton>
+                 <UploadAckModal/>
+            </Modal>
         </div>
     )
 }

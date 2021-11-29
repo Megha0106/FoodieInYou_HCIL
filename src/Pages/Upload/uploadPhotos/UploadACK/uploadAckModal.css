@@ -1,0 +1,14 @@
+.thanksDiv{
+    display: flex;
+    flex-direction: row;
+}
+
+.thanks{
+    margin-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.msg{
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}

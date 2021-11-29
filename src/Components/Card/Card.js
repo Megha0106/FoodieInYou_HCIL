@@ -9,6 +9,7 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
@@ -37,6 +38,7 @@ export default function RecipeReviewCard(props) {
   };
 
   return (
+    
     <Card sx={{margin:5}}>
       <CardMedia
         height="194px"
@@ -56,6 +58,7 @@ export default function RecipeReviewCard(props) {
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
+          sx = {{marginLeft:20}}
         >
           <ExpandMoreIcon />
         </ExpandMore>
@@ -66,10 +69,12 @@ export default function RecipeReviewCard(props) {
                        {props.about}
           </Typography>
         <Link to="/read" className='read-more-bt'>
-          Read More
-        </Link>
+          Read  More
+        </Link> 
+        
          </CardContent>
       </Collapse>
     </Card>
+    
   );
 }

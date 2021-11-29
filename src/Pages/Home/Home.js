@@ -25,8 +25,9 @@ function Home() {
     return (
         <div className="home-container">
             <NavBar/>
-           
+            <div  ><h1 className = "pageName">All Recipes</h1></div>
             <Gallery /> 
+            
             
             <Grid container>
                 {

@@ -159,11 +159,25 @@ function Navbar() {
             </Search>
             <Box sx={{flexGrow:1, display:"flex"}} />
             <Box sx={{display:{xs:'none', sm:'flex', md:'flex',}, flexDirection:"row", flexGrow:2 }} >
-              <h3>Cuisine</h3>
-              <h3>Drinks</h3>
-              <h3>Patron</h3>
-              <h3>AboutUs</h3>
-              <h3>Help</h3>
+              <Link to="/" className="menu">
+              All Recipes
+              </Link> 
+              <Link to="/" className="menu">
+                Drinks
+              </Link> 
+              <Link to="/" className="menu">
+              Desserts
+              </Link> 
+              <Link to="/" className="menu">
+              Cuisine
+              </Link> 
+              <Link to="/" className="menu">
+              Patron
+              </Link> 
+              <Link to="/sign-up" className="menu">
+                Breakfast
+              </Link>  
+              
             </Box>
 
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>

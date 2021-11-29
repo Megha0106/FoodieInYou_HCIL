@@ -1,0 +1,25 @@
+.modalContainer
+{
+    text-align: center;
+    
+}
+
+.text{
+    font-family: 'Lora', serif;
+    color: black;
+    font-size: larger;
+    
+}
+.input{
+    margin-top: 10px;
+   
+    
+}
+.ask{
+    margin-left: 75%;
+}
+.contactLogo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px
+}
